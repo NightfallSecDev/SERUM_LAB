@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Architecture Template | SERUM LAB Clinical Cosmetics</title>
+    <meta name="description" content="Master architecture template for SERUM LAB clinical skincare platform.">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="./index.html" class="brand-logo">SERUM<span>LAB</span></a>
+            <div class="nav-links">
+                <a href="./storefront/index.html" class="nav-link">Home</a>
+                <a href="./storefront/shop.html" class="nav-link">Catalog</a>
+                <a href="./storefront/about.html" class="nav-link">About Us</a>
+                <a href="./storefront/contact.html" class="nav-link">Contact Us</a>
+                <a href="./admin/dashboard.html" class="nav-link">Command Center</a>
+            </div>
+            <div class="nav-actions">
+                <a href="./storefront/login.html" class="btn btn-secondary btn-sm" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Clinical Login</a>
+                <button class="open-cart-btn">
+                    <span>Cart</span>
+                    <span class="cart-count-badge" style="display: none;">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main style="padding: 6rem 2rem; max-width: 1400px; margin: 0 auto; text-align: center;">
+        <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Base Architecture Blueprint</h1>
+        <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 700px; margin: 0 auto 3rem;">
+            This master template defines the core structural elements, navigation drawer, and persistent cart drawer for the SERUM LAB clinical cosmetics web application.
+        </p>
+        <div style="display: flex; gap: 1.5rem; justify-content: center;">
+            <a href="./storefront/index.html" class="btn btn-primary">Enter Storefront</a>
+            <a href="./storefront/shop.html" class="btn btn-secondary">Explore Diagnostic Quiz</a>
+            <a href="./admin/dashboard.html" class="btn btn-secondary">Admin Portal</a>
+        </div>
+    </main>
+
+    <!-- Cart Drawer & Overlay -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3>Clinical Cart</h3>
+            <button class="close-drawer-btn" onclick="closeCartDrawer()">&times;</button>
+        </div>
+        <div class="cart-drawer-body" id="cart-items-container">
+            <!-- Dynamic Cart Items Populated by JS -->
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-subtotal-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">₹0</span>
+            </div>
+            <a href="./storefront/checkout.html" class="btn btn-primary btn-lg" style="width: 100%;">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="./index.html" class="brand-logo">SERUM<span>LAB</span></a>
+                <p>Advanced clinical skincare engineered with high-concentration active ingredients and botanical buffers for deep cellular transformation.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <div class="footer-links">
+                    <a href="./storefront/index.html" class="footer-link">Home</a>
+                    <a href="./storefront/shop.html" class="footer-link">Catalog</a>
+                    <a href="./storefront/checkout.html" class="footer-link">Checkout</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Legal & Protocol</h4>
+                <div class="footer-links">
+                    <a href="./legal/privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="./legal/terms.html" class="footer-link">Terms of Service</a>
+                    <a href="./legal/refund.html" class="footer-link">Refund Protocol</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Command Center</h4>
+                <div class="footer-links">
+                    <a href="./admin/dashboard.html" class="footer-link">Dashboard</a>
+                    <a href="./admin/products.html" class="footer-link">Product Matrix</a>
+                    <a href="./admin/orders.html" class="footer-link">Order Ledger</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SERUM LAB Clinical Cosmetics. All Rights Reserved.</p>
+            <p>Cosmetics, Wellness & Beauty Architecture</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/products.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
