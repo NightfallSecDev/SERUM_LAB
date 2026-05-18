@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Matrix Management | SERUM LAB Admin</title>
+    <meta name="description" content="Manage product catalog, active percentages, and diagnostic metadata for SERUM LAB.">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="../index.html" class="brand-logo">SERUM<span>LAB</span> <span style="font-size: 0.8rem; background: var(--accent-gradient); color: var(--text-dark); padding: 0.2rem 0.6rem; border-radius: var(--radius-pill);">ADMIN</span></a>
+            <div class="nav-links">
+                <a href="./dashboard.html" class="nav-link">Dashboard</a>
+                <a href="./products.html" class="nav-link active">Product Matrix</a>
+                <a href="./orders.html" class="nav-link">Order Ledger</a>
+                <a href="../storefront/about.html" class="nav-link">About Us</a>
+                <a href="../storefront/contact.html" class="nav-link">Contact Us</a>
+                <a href="../storefront/index.html" class="nav-link">Storefront &rarr;</a>
+            </div>
+            <div class="nav-actions">
+                <a href="../storefront/login.html" class="btn btn-secondary btn-sm" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Clinical Login</a>
+                <button class="open-cart-btn">
+                    <span>Cart</span>
+                    <span class="cart-count-badge" style="display: none;">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Admin Products Main Area -->
+    <main class="admin-container">
+        <div class="admin-header-row">
+            <div>
+                <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Formulation Matrix (50-Product Architecture)</h1>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">Synthesize, modify, or recalibrate active ingredient concentrations and diagnostic quiz metadata.</p>
+            </div>
+            <button class="btn btn-primary" onclick="showToast('Formulation Synthesis Modal Opened')">Synthesize New Active &plus;</button>
+        </div>
+
+        <div class="admin-card">
+            <div class="admin-card-header">
+                <h3 style="font-size: 1.5rem;">Master Catalog Inventory</h3>
+                <div style="display: flex; gap: 1rem;">
+                    <input type="text" class="input-field" placeholder="Search ID, Active..." style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                    <button class="btn btn-secondary btn-sm">Filter Category</button>
+                </div>
+            </div>
+            <div class="admin-table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Formulation Nomenclature</th>
+                            <th>Primary Category</th>
+                            <th>Retail Price</th>
+                            <th>Stability / Stock</th>
+                            <th>Laboratory Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-products-tbody">
+                        <!-- Populated dynamically by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Drawer & Overlay -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3>Clinical Cart</h3>
+            <button class="close-drawer-btn" onclick="closeCartDrawer()">&times;</button>
+        </div>
+        <div class="cart-drawer-body" id="cart-items-container">
+            <!-- Dynamic Cart Items Populated by JS -->
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-subtotal-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">₹0</span>
+            </div>
+            <a href="../storefront/checkout.html" class="btn btn-primary btn-lg" style="width: 100%;">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="../index.html" class="brand-logo">SERUM<span>LAB</span></a>
+                <p>Advanced clinical skincare engineered with high-concentration active ingredients and botanical buffers for deep cellular transformation.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <div class="footer-links">
+                    <a href="../storefront/index.html" class="footer-link">Home</a>
+                    <a href="../storefront/shop.html" class="footer-link">Catalog</a>
+                    <a href="../storefront/checkout.html" class="footer-link">Checkout</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Legal & Protocol</h4>
+                <div class="footer-links">
+                    <a href="../legal/privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="../legal/terms.html" class="footer-link">Terms of Service</a>
+                    <a href="../legal/refund.html" class="footer-link">Refund Protocol</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Command Center</h4>
+                <div class="footer-links">
+                    <a href="./dashboard.html" class="footer-link">Dashboard</a>
+                    <a href="./products.html" class="footer-link">Product Matrix</a>
+                    <a href="./orders.html" class="footer-link">Order Ledger</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SERUM LAB Clinical Cosmetics. All Rights Reserved.</p>
+            <p>Cosmetics, Wellness & Beauty Architecture</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/products.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
